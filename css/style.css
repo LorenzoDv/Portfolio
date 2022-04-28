@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+body{
+font-family: 'Titillium Web', sans-serif;
+margin: 0;
+padding: 0 0;
+
+}
+/* EFFET TEXT */
+@keyframes apparition{
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+/* EN TETE */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: sticky;
+    align-items: center;
+    background-color: white ;
+    box-shadow: 0px 1px 10px black;
+    top:0;
+    z-index: 9999;
+
+}
+
+nav .entête {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+
+}
+nav .entête img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+}
+nav .entête h1 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-right: 35px;
+    z-index: 3;
+   
+
+}
+/* NAV */
+
+nav ul li a{
+    list-style-type: none;
+    text-decoration: none;
+    margin-left: 60px;
+    margin-right: 25px;
+    font-size: 25px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    
+
+}
+/* EFFET TEXT NAV */
+nav ul li a::before{
+    content: "";
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 0;
+    transform :scaleX(0);
+    transition: transform 0.4s;
+
+
+}
+
+nav ul li a:hover::before{
+    transform-origin: 0 0;
+    transform: scaleX(1);
+
+}
+
+/* MILLIEUX PAGE */
+
+.page-content{
+    margin: 4%;
+}
+.page-content header{
+    margin-top: 5%;
+    max-width: 80%;
+   
+
+}
+.page-content header .control i{
+    padding: 15px;
+    padding-left: 0;
+    cursor: pointer;
+    color:#FFB600
+}
+.page-content header .control i:hover{
+    
+    cursor: pointer;
+    color: #818181;
+}
+/* titre index */
+.page-content header h1{
+    font-size: 6vw;
+    padding-bottom: 25px;
+    /* text-shadow: 4px 2px 2px gray; */
+    margin: 0px;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 1.5s 0.4s ease-in-out forwards;
+    
+}
+/* text presentation */
+.page-content header p{
+    line-height: 45px;
+    padding-bottom: 30px;
+    color: #818181;
+    margin: 0px;
+    font-size: 25px;
+    font-family: 'Saira Condensed', sans-serif;
+}
+/* button */
+.page-content header a{
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: solid 2px #818181;
+    
+    
+    padding-bottom: 1px;
+    
+    
+}
+.page-content header a:hover{
+    color: #818181;
+    border-bottom: solid 2px black;
+    
+    
+}
+/* IMAGE CENTRALE */
+.page-content .pres-img{
+    margin-top: 5%;
+
+}
+.page-content .pres-img img{
+    max-width: 100%;
+    height: auto;
+}
+/* TOP PAGE */
+.scroll-top a{
+    text-decoration: none;
+    color: grey;
+    font-size: 15px;
+    position: relative;
+    top: 2px;
+    padding: 0;
+    font-weight: bold;
+    /* border-bottom: solid 1px black; */
+    padding-bottom: 1px;
+    scroll-behavior: smooth;
+    border-bottom: solid 1px black;
+}
+.scroll-top a:hover{
+    color: black;
+    border-bottom: solid 1px #818181;
+    scroll-behavior: smooth;
+      
+}
+.scroll-top i{
+    margin-left: 5px;
+}
+
+/* PROJETS */
+.sec-projects h1{
+    font-size: 50px;
+}
+.projects{
+    display: flex;
+    
+
+}
+/* PROJECT REALISES */
+.projects .project h4{
+    text-align: left;
+    margin-right: 50px;
+    padding: 0;
+    font-size: 25px;
+}
+.projects .dates{
+    font-weight: bold;
+    font-size: 18px;
+    color: #818181;
+    text-align: left;
+}
+.projects .desciption{
+    text-align: left;
+} 
+.control{
+    border: none;
+    background: none;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Saira Condensed', sans-serif;
+}
+.controle:hover{
+    color: red;
+    border: solid 2px black;
+}
+/* BAS DE PAGE */
+.bottom-page{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0px ;
+    padding: 10px 0px;
+    background-color: black;
+    text-align: right;
+    
+}
+.bottom a{
+    color: #818181
+}
+
+.bottom-page .bottom h4{
+    text-align: right;
+    font-size: 25px;
+    text-align: left;
+    color: #818181;
+}
+.bottom-page .bottom p{
+    color: #818181;
+    
+    padding: 0px 0px;
+    font-size: 18px;
+    text-align: left;
+}
+/* PAGE CV */
+.page-cv {
+    margin: 4%;
+    display: flex;
+    flex:auto;
+    height: auto;
+
+}
+.page-cv header img{
+        
+    max-width: 100%;
+}
+.page-cv header h1{
+    font-size: 6vw;
+    margin: 0;
+    text-align: left;
+    padding-bottom: 35px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: apparition 1.5s 0.4s ease-in-out forwards;
+
+}
+.page-cv header p{
+    font-size: 25px;
+    text-align: left;
+    padding-bottom: 52px;
+    margin: 0;
+    line-height: 45px;
+    color: #818181;
+
+}
+
+.cv{
+    display:inline;
+    /* flex-direction: column; */
+    /* overflow-inline: hidden; */
+    height: auto;
+    margin-left:150px;
+    
+    
+    
+    /* border-bottom: solid 4px black; */
+}
+.cv .diplomes{
+    
+    border-left: solid 2px black;
+    padding: 0px 25px;
+    
+    
+}
+.cv .qualifications{
+    
+    border-left: solid 2px black;
+    padding: 0px 25px;
+    
+}
+.right{
+    display:inline;
+    height: auto;
+    margin-left: 170px;
+
+    
+}
+.right .stage{
+
+    border-left: solid 2px black;
+    
+    padding: 0px 25px;
+    
+}
+.right .travail{
+
+    border-left: solid 2px black;
+    
+    padding: 0px 25px;
+    
+}
+/* titre categorie */
+.diplomes h4{
+    font-size: 40px;
+    /* border-left: solid 5px black; */
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: apparition 1.5s 0.4s ease-in-out forwards;
+    
+    
+
+}
+.qualifications h4{
+    margin-top: 53px;
+    font-size: 40px;
+    /* border-left: solid 5px black; */
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: apparition 2s 0.4s ease-in-out forwards;
+
+}
+
+.stage h4{
+    font-size: 40px;
+    /* border-left: solid 5px black; */
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: apparition 1.7s 0.4s ease-in-out forwards;
+
+}
+.travail h4{
+    
+    font-size: 40px;
+    /* border-left: solid 5px black; */
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: apparition 2.2s 0.4s ease-in-out forwards;
+
+}
+/* texte categorie */
+.diplomes p{
+    
+    font-size: 20px;
+    color: #818181;
+
+}
+.qualifications p{
+    font-size: 20px;
+    color: #818181;
+
+    
+
+}
+.stage p{
+    font-size: 20px;
+    color: #818181;
+    
+
+}
+.travail p{
+    font-size: 20px;
+    color: #818181;
+    
+
+}
+/* PAGE PROJET */
+.page-projet{
+    margin: 4%;
+}
+.page-projet h1{
+    font-size: 5vw;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: apparition 2.2s 0.4s ease-in-out forwards;
+
+}
+.page-projet h1:hover{
+    color: #818181;
+}
+.main .content .card .projet1left{
+
+    background-color: black;
+    flex: 0 0 30%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-left: solid 10px #818181;
+    box-shadow: 5px 10px 5px grey;
+}
+.main .content .card .projet1left:hover{
+    /* transform: scaleX(1); */
+    border-left: solid 10px  #FFB600;
+    /* border-bottom: solid 10px  #818181; */
+    
+}
+.projet1left h1{
+    font-size: 40px;
+    margin-bottom: 70px;
+}
+.projet1left p{
+    font-size: 20px;
+    color: #818181;
+}
+
+.main .content .card.projet1right{
+    flex: 0 0 70%;
+}
+.content .card .projet1right img{
+    width: 650px;
+    height: 400px;
+    margin-top: 5px;
+}
+.main .content .card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+.main {
+    margin: 4%;
+    margin-bottom: 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+/* GESTION MOBILE */
+@media screen and (max-width: 700px){
+    nav{
+        justify-content: center;
+    }
+    nav ul{
+        text-align: center;
+        justify-content: center;
+        padding: 0px 0px;
+        margin-right: 20px;
+        width: 100%;
+    }
+    .page-content{
+        margin-top: 10%;
+    }
+    .projects{
+       flex-wrap: wrap;
+    }
+    .bottom-page{
+        flex-wrap: wrap;
+    }
+    .page-cv{
+         flex-wrap: wrap;
+         justify-content: center;
+         display:flex;
+    }
+    .cv{
+        flex-wrap: wrap;
+        display:grid;
+        margin: 0;
+        padding: 0;
+        border-bottom: solid 2px black;
+    }
+    .page-cv header h1{
+        font-size: 50px;
+        text-align: center;
+    }
+    .page-cv header p{
+        font-size: 25px;
+        
+    }
+    .page-cv header img{
+        
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+    .right{
+        
+        /* flex-wrap: wrap; */
+        display:flex;
+        
+        margin: 0px;
+        padding: 0;
+    }
+    .right h4{
+        font-size: 25px;
+    }
+    .cv h4{
+        font-size: 25px;
+    }
+    .main .content .card{
+        display:grid;
+        flex-wrap: wrap;
+    }
+    .content .card .projet1right img{
+        width: 100%;
+        height: 200px;
+        margin-top: 0;
+    }
+    .main .content .card .projet1left{
+        background-color: black;
+        /* flex: 0 0 30%; */
+        padding: 0;
+        text-align: center;
+        color: white;
+        
+    }
+    .projet1left h1{
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
+    .projet1left p{
+        font-size: 20px;
+        color: #818181;
+    }
+    .page-projet h1{
+        font-size: 25px;
+        text-align: center;
+    
+    }
+    
+}
+@media screen and (max-width: 1100px){
+    nav{
+        justify-content: center;
+    }
+    .page-content header h1{
+        font-size: 35px;
+    }
+
+    .right{
+        margin-left: 21px;
+        flex-wrap: wrap;
+        padding: 0;
+        /* display: flex; */
+    }
+    .cv{
+        flex-wrap: wrap;
+        /* display:grid; */
+        margin-left: 0;
+        padding: 0;
+        justify-content: left;
+        border: none;
+    }
+    .page-cv header h1{
+        font-size: 50px;
+        text-align: center;
+        justify-content: center;
+        margin-top: 200px;
+    }
+    .page-cv header p{
+        font-size: 25px;
+        text-align: center;
+        justify-content: center;
+        
+    }
+    
+    .page-cv header img{
+    
+    max-width: 0%;
+    flex-wrap: wrap;
+    }
+    .qualifications h4{
+        margin-top: 80px;
+    }
+      .main .content .card{
+        display:grid;
+        flex-wrap: wrap;
+    }
+    /* .content .card .projet1right img{
+        width: 750px;
+        height: 400px;
+        margin-top: 0;
+    }  */
+     .main .content .card .projet1left{
+        background-color: black;
+        
+        padding: 0;
+        text-align: center;
+        color: white;
+        
+    } 
+    /* .projet1left h1{
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
+    .projet1left p{
+        font-size: 20px;
+        color: #818181;
+    }
+    .page-projet h1{
+        font-size: 25px;
+        text-align: center;
+    
+    }   */
+}
