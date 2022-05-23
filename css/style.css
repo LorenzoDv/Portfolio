@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300&display=swap');
-html{
+
+html {
     scroll-behavior: smooth;
 }
-body{
-font-family: 'Titillium Web', sans-serif;
-margin: 0;
-padding: 0 0;
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0 0;
 
 }
+
 /* EFFET TEXT */
-@keyframes apparition{
-    100%{
+@keyframes apparition {
+    100% {
         opacity: 1;
         transform: none;
     }
@@ -26,9 +29,9 @@ nav {
     justify-content: space-between;
     position: sticky;
     align-items: center;
-    background-color: white ;
+    background-color: white;
     box-shadow: 0px 1px 10px black;
-    top:0;
+    top: 0;
     z-index: 9998;
 
 }
@@ -39,12 +42,14 @@ nav .entête {
     align-items: center;
 
 }
+
 nav .entête img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 
 }
+
 nav .entête h1 {
     display: flex;
     align-items: center;
@@ -52,18 +57,20 @@ nav .entête h1 {
     margin-left: 10px;
 
 }
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     margin-right: 35px;
     z-index: 3;
-   
+
 
 }
+
 /* NAV */
 
-nav ul li a{
+nav ul li a {
     list-style-type: none;
     text-decoration: none;
     margin-left: 60px;
@@ -72,11 +79,12 @@ nav ul li a{
     cursor: pointer;
     position: relative;
     color: black;
-    
+
 
 }
+
 /* EFFET TEXT NAV */
-nav ul li a::before{
+nav ul li a::before {
     content: "";
     position: absolute;
     background: black;
@@ -84,13 +92,13 @@ nav ul li a::before{
     height: 2px;
     bottom: 0;
     transform-origin: 100% 0;
-    transform :scaleX(0);
+    transform: scaleX(0);
     transition: transform 0.4s;
 
 
 }
 
-nav ul li a:hover::before{
+nav ul li a:hover::before {
     transform-origin: 0 0;
     transform: scaleX(1);
 
@@ -98,28 +106,32 @@ nav ul li a:hover::before{
 
 /* MILLIEUX PAGE */
 
-.page-content{
+.page-content {
     margin: 4%;
 }
-.page-content header{
+
+.page-content header {
     margin-top: 5%;
     max-width: 80%;
-   
+
 
 }
-.page-content header .control i{
+
+.page-content header .control i {
     padding: 15px;
     padding-left: 0;
     cursor: pointer;
-    color:#FFB600
+    color: #FFB600
 }
-.page-content header .control i:hover{
-    
+
+.page-content header .control i:hover {
+
     cursor: pointer;
     color: #818181;
 }
+
 /* titre index */
-.page-content header h1{
+.page-content header h1 {
     font-size: 5vw;
     padding-bottom: 25px;
     /* text-shadow: 4px 2px 2px gray; */
@@ -129,10 +141,11 @@ nav ul li a:hover::before{
     opacity: 0;
     transform: translateY(-30px);
     animation: apparition 1.5s 0.4s ease-in-out forwards;
-    
+
 }
+
 /* text presentation */
-.page-content header p{
+.page-content header p {
     line-height: 45px;
     padding-bottom: 30px;
     color: #818181;
@@ -140,37 +153,42 @@ nav ul li a:hover::before{
     font-size: 25px;
     font-family: 'Saira Condensed', sans-serif;
 }
+
 /* button */
-.page-content header a{
+.page-content header a {
     text-decoration: none;
     color: black;
     padding: 0;
     font-size: 16px;
     font-weight: bold;
     border-bottom: solid 2px #818181;
-    
-    
+
+
     padding-bottom: 1px;
-    
-    
+
+
 }
-.page-content header a:hover{
+
+.page-content header a:hover {
     color: #818181;
     border-bottom: solid 2px black;
-    
-    
+
+
 }
+
 /* IMAGE CENTRALE */
-.page-content .pres-img{
+.page-content .pres-img {
     margin-top: 5%;
 
 }
-.page-content .pres-img img{
+
+.page-content .pres-img img {
     max-width: 100%;
     height: auto;
 }
+
 /* TOP PAGE */
-.scroll-top a{
+.scroll-top a {
     text-decoration: none;
     color: grey;
     font-size: 15px;
@@ -183,42 +201,72 @@ nav ul li a:hover::before{
     scroll-behavior: smooth;
     border-bottom: solid 1px black;
 }
-.scroll-top a:hover{
+
+.scroll-top a:hover {
     color: black;
     border-bottom: solid 1px #818181;
     scroll-behavior: smooth;
-      
+
 }
-.scroll-top i{
+
+.scroll-top i {
     margin-left: 5px;
 }
 
 /* PROJETS */
-.sec-projects h1{
+.sec-projects h1 {
     font-size: 50px;
 }
-.projects{
+
+
+
+#arrowmoove {
+    font-size: 35px;
+    margin-left: 15px;
+    transform: rotate(-90deg);
+}
+
+#arrowmoove.arrow {
+    font-size: 35px;
+    margin-left: 15px;
+    transform: rotate(0deg);
+}
+
+.projects {
     display: flex;
-    
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1s ease-in-out,
+        opacity 0.6s ease-in-out;
 
 }
+
+.projects.active {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+
 /* PROJECT REALISES */
-.projects .project h4{
+.projects .project h4 {
     text-align: left;
     margin-right: 50px;
     padding: 0;
     font-size: 25px;
 }
-.projects .dates{
+
+.projects .dates {
     font-weight: bold;
     font-size: 18px;
     color: #818181;
     text-align: left;
 }
-.projects .desciption{
+
+.projects .desciption {
     text-align: left;
-} 
-.control{
+}
+
+.control {
     border: none;
     background: none;
     text-decoration: none;
@@ -226,50 +274,57 @@ nav ul li a:hover::before{
     font-weight: bold;
     font-family: 'Saira Condensed', sans-serif;
 }
-.controle:hover{
+
+.controle:hover {
     color: red;
     border: solid 2px black;
 }
+
 /* BAS DE PAGE */
-.bottom-page{
+.bottom-page {
     display: flex;
     justify-content: space-around;
-    margin-left: 0px ;
+    margin-left: 0px;
     padding: 10px 0px;
     background-color: black;
     text-align: right;
-    
+
 }
-.bottom a{
+
+.bottom a {
     color: #818181
 }
 
-.bottom-page .bottom h4{
+.bottom-page .bottom h4 {
     text-align: right;
     font-size: 25px;
     text-align: left;
     color: #818181;
 }
-.bottom-page .bottom p{
+
+.bottom-page .bottom p {
     color: #818181;
-    
+
     padding: 0px 0px;
     font-size: 18px;
     text-align: left;
 }
+
 /* PAGE CV */
 .page-cv {
     margin: 4%;
     display: flex;
-    flex:auto;
+    flex: auto;
     height: auto;
 
 }
-.page-cv header img{
-        
+
+.page-cv header img {
+
     max-width: 100%;
 }
-.page-cv header h1{
+
+.page-cv header h1 {
     font-size: 6vw;
     margin: 0;
     text-align: left;
@@ -279,7 +334,8 @@ nav ul li a:hover::before{
     animation: apparition 1.5s 0.4s ease-in-out forwards;
 
 }
-.page-cv header p{
+
+.page-cv header p {
     font-size: 25px;
     text-align: left;
     padding-bottom: 52px;
@@ -289,63 +345,70 @@ nav ul li a:hover::before{
 
 }
 
-.cv{
-    display:inline;
+.cv {
+    display: inline;
     /* flex-direction: column; */
     /* overflow-inline: hidden; */
     height: auto;
-    margin-left:150px;
-    
-    
-    
+    margin-left: 150px;
+
+
+
     /* border-bottom: solid 4px black; */
 }
-.cv .diplomes{
-    
+
+.cv .diplomes {
+
     border-left: solid 2px black;
     padding: 0px 25px;
-    
-    
+
+
 }
-.cv .qualifications{
-    
+
+.cv .qualifications {
+
     border-left: solid 2px black;
     padding: 0px 25px;
-    
+
 }
-.right{
-    display:inline;
+
+.right {
+    display: inline;
     height: auto;
     margin-left: 170px;
 
-    
+
 }
-.right .stage{
+
+.right .stage {
 
     border-left: solid 2px black;
-    
+
     padding: 0px 25px;
-    
+
 }
-.right .travail{
+
+.right .travail {
 
     border-left: solid 2px black;
-    
+
     padding: 0px 25px;
-    
+
 }
+
 /* titre categorie */
-.diplomes h4{
+.diplomes h4 {
     font-size: 40px;
     /* border-left: solid 5px black; */
     opacity: 0;
     transform: translateX(-20px);
     animation: apparition 1.5s 0.4s ease-in-out forwards;
-    
-    
+
+
 
 }
-.qualifications h4{
+
+.qualifications h4 {
     margin-top: 53px;
     font-size: 40px;
     /* border-left: solid 5px black; */
@@ -355,7 +418,7 @@ nav ul li a:hover::before{
 
 }
 
-.stage h4{
+.stage h4 {
     font-size: 40px;
     /* border-left: solid 5px black; */
     opacity: 0;
@@ -363,8 +426,9 @@ nav ul li a:hover::before{
     animation: apparition 1.7s 0.4s ease-in-out forwards;
 
 }
-.travail h4{
-    
+
+.travail h4 {
+
     font-size: 40px;
     /* border-left: solid 5px black; */
     opacity: 0;
@@ -372,37 +436,43 @@ nav ul li a:hover::before{
     animation: apparition 2.2s 0.4s ease-in-out forwards;
 
 }
+
 /* texte categorie */
-.diplomes p{
-    
+.diplomes p {
+
     font-size: 20px;
     color: #818181;
 
 }
-.qualifications p{
+
+.qualifications p {
     font-size: 20px;
     color: #818181;
 
-    
+
 
 }
-.stage p{
+
+.stage p {
     font-size: 20px;
     color: #818181;
-    
+
 
 }
-.travail p{
+
+.travail p {
     font-size: 20px;
     color: #818181;
-    
+
 
 }
+
 /* PAGE PROJET */
-.page-projet{
+.page-projet {
     margin: 4%;
 }
-.page-projet h1{
+
+.page-projet h1 {
     font-size: 5vw;
     text-align: center;
     opacity: 0;
@@ -410,10 +480,12 @@ nav ul li a:hover::before{
     animation: apparition 2.2s 0.4s ease-in-out forwards;
 
 }
-.page-projet h1:hover{
+
+.page-projet h1:hover {
     color: #818181;
 }
-.main .content .card .projet1left{
+
+.main .content .card .projet1left {
 
     background-color: black;
     flex: 0 0 30%;
@@ -423,35 +495,41 @@ nav ul li a:hover::before{
     border-left: solid 10px #818181;
     box-shadow: 5px 10px 5px grey;
 }
-.main .content .card .projet1left:hover{
+
+.main .content .card .projet1left:hover {
     /* transform: scaleX(1); */
-    border-left: solid 10px  #FFB600;
+    border-left: solid 10px #FFB600;
     /* border-bottom: solid 10px  #818181; */
-    
+
 }
-.projet1left h1{
+
+.projet1left h1 {
     font-size: 40px;
     margin-bottom: 70px;
 }
-.projet1left p{
+
+.projet1left p {
     font-size: 20px;
     color: #818181;
 }
 
-.main .content .card.projet1right{
+.main .content .card.projet1right {
     flex: 0 0 70%;
 }
-.content .card .projet1right img{
+
+.content .card .projet1right img {
     width: 650px;
     height: 400px;
     margin-top: 5px;
 }
-.main .content .card{
+
+.main .content .card {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 45px;
 }
+
 .main {
     margin: 4%;
     margin-bottom: 0;
@@ -462,112 +540,133 @@ nav ul li a:hover::before{
 
 
 /* GESTION MOBILE */
-@media screen and (max-width: 700px){
-    nav{
+@media screen and (max-width: 700px) {
+    nav {
         justify-content: center;
     }
-    nav ul{
+
+    nav ul {
         text-align: center;
         justify-content: center;
         padding: 0px 0px;
         margin-right: 20px;
         width: 100%;
     }
-    .page-content{
+
+    .page-content {
         margin-top: 10%;
     }
-    .projects{
-       flex-wrap: wrap;
-    }
-    .bottom-page{
+
+    .projects {
         flex-wrap: wrap;
     }
-    .page-cv{
-         flex-wrap: wrap;
-         justify-content: center;
-         display:flex;
-    }
-    .cv{
+
+    .bottom-page {
         flex-wrap: wrap;
-        display:grid;
+    }
+
+    .page-cv {
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+    }
+
+    .cv {
+        flex-wrap: wrap;
+        display: grid;
         margin: 0;
         padding: 0;
         border-bottom: solid 2px black;
     }
-    .page-cv header h1{
+
+    .page-cv header h1 {
         font-size: 50px;
         text-align: center;
     }
-    .page-cv header p{
+
+    .page-cv header p {
         font-size: 25px;
-        
+
     }
-    .page-cv header img{
-        
+
+    .page-cv header img {
+
         max-width: 100%;
         flex-wrap: wrap;
     }
-    .right{
-        
+
+    .right {
+
         /* flex-wrap: wrap; */
-        display:flex;
-        
+        display: flex;
+
         margin: 0px;
         padding: 0;
     }
-    .right h4{
+
+    .right h4 {
         font-size: 25px;
     }
-    .cv h4{
+
+    .cv h4 {
         font-size: 25px;
     }
-    .main .content .card{
-        display:grid;
+
+    .main .content .card {
+        display: grid;
         flex-wrap: wrap;
     }
-    .content .card .projet1right img{
+
+    .content .card .projet1right img {
         width: 100%;
         height: 200px;
         margin-top: 0;
     }
-    .main .content .card .projet1left{
+
+    .main .content .card .projet1left {
         background-color: black;
         /* flex: 0 0 30%; */
         padding: 0;
         text-align: center;
         color: white;
-        
+
     }
-    .projet1left h1{
+
+    .projet1left h1 {
         font-size: 25px;
         margin-bottom: 0px;
     }
-    .projet1left p{
+
+    .projet1left p {
         font-size: 20px;
         color: #818181;
     }
-    .page-projet h1{
+
+    .page-projet h1 {
         font-size: 25px;
         text-align: center;
-    
+
     }
-    
+
 }
-@media screen and (max-width: 1100px){
-    nav{
+
+@media screen and (max-width: 1100px) {
+    nav {
         justify-content: center;
     }
-    .page-content header h1{
+
+    .page-content header h1 {
         font-size: 35px;
     }
 
-    .right{
+    .right {
         margin-left: 21px;
         flex-wrap: wrap;
         padding: 0;
         /* display: flex; */
     }
-    .cv{
+
+    .cv {
         flex-wrap: wrap;
         /* display:grid; */
         margin-left: 0;
@@ -575,44 +674,50 @@ nav ul li a:hover::before{
         justify-content: left;
         border: none;
     }
-    .page-cv header h1{
+
+    .page-cv header h1 {
         font-size: 50px;
         text-align: center;
         justify-content: center;
         margin-top: 200px;
     }
-    .page-cv header p{
+
+    .page-cv header p {
         font-size: 25px;
         text-align: center;
         justify-content: center;
-        
+
     }
-    
-    .page-cv header img{
-    
-    max-width: 0%;
-    flex-wrap: wrap;
-    }
-    .qualifications h4{
-        margin-top: 80px;
-    }
-      .main .content .card{
-        display:grid;
+
+    .page-cv header img {
+
+        max-width: 0%;
         flex-wrap: wrap;
     }
+
+    .qualifications h4 {
+        margin-top: 80px;
+    }
+
+    .main .content .card {
+        display: grid;
+        flex-wrap: wrap;
+    }
+
     /* .content .card .projet1right img{
         width: 750px;
         height: 400px;
         margin-top: 0;
     }  */
-     .main .content .card .projet1left{
+    .main .content .card .projet1left {
         background-color: black;
-        
+
         padding: 0;
         text-align: center;
         color: white;
-        
-    } 
+
+    }
+
     /* .projet1left h1{
         font-size: 25px;
         margin-bottom: 0px;
